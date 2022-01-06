@@ -31,7 +31,6 @@ public class KitExtension extends Extension {
         config = KitConfiguration.load(this);
         kitContainer.load();
         MinecraftServer.getCommandManager().register(new KitCommand(this));
-        MinecraftServer.getGlobalEventHandler().addListener(PlayerLoginEvent.class, e -> e.getPlayer().getInventory().addItemStack(ItemStack.of(Material.STICK)));
         getLogger().info("Resources loaded");
     }
 
