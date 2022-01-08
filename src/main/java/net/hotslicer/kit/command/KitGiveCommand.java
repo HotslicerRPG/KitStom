@@ -53,6 +53,7 @@ public class KitGiveCommand extends Command {
                 return;
             }
             extension.getKitManager().giveKit(kitData, player);
+            extension.getKitInstanceManager().spawnPlayer(player);
         }, kitNameArgument);
     }
 }

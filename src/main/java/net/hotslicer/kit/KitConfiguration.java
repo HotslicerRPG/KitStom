@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.Cleanup;
 import lombok.Data;
+import net.hotslicer.kit.instance.KitInstanceConfiguration;
+import net.minestom.server.coordinate.Pos;
 
 import java.io.File;
 import java.io.FileReader;
@@ -35,4 +37,5 @@ public class KitConfiguration {
 
     private boolean saveKitOnCreation = true;
 
+    private KitInstanceConfiguration world = new KitInstanceConfiguration();
 }

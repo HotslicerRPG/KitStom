@@ -3,9 +3,13 @@ package net.hotslicer.kit.command;
 import net.hotslicer.kit.KitExtension;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.Style;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.arguments.ArgumentType;
 import net.minestom.server.entity.Player;
+
+import java.util.Map;
 
 /**
  * @author Jenya705
@@ -37,10 +41,8 @@ public class KitCreateCommand extends Command {
             String kitName = context.get(kitNameArgument);
             boolean exists = extension.getKitContainer().getKit(kitName) != null;
             if (exists &&
-                    (
-                            player.getPermissionLevel() < 3 &&
-                                    !player.hasPermission("kit.replace")
-                    )) {
+                    player.getPermissionLevel() < 3 &&
+                    !player.hasPermission("kit.replace")) {
                 player.sendMessage(Component
                         .text("You don't have permissions to create kit")
                         .color(NamedTextColor.RED)
