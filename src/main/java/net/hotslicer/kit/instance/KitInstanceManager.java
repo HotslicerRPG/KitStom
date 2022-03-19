@@ -42,8 +42,7 @@ public class KitInstanceManager {
         if (!hasInstance()) {
             return;
         }
-        player.setInstance(getInstance());
-        player.teleport(spawnPositions()[nextCurrent()].toPos());
+        player.setInstance(getInstance(), spawnPositions()[nextCurrent()].toPos());
     }
 
     private BlockPosition[] spawnPositions() {
